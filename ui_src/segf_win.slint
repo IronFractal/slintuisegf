@@ -1,0 +1,44 @@
+/**
+ * @file segf_win.slint
+ * @author James Hatfield
+ * @date 2025-03-18
+ * SPDX-License-Identifier: MIT
+ */
+export component SegfWindow inherits Window
+{
+    min-width: 640px;
+    min-height: 360px;
+    title: "segf";
+
+    callback quit();
+
+    MenuBar {
+        Menu {
+            title: "File";
+            MenuItem {
+                title: "Quit";
+                activated => {
+                    quit();
+                }
+            }
+        }
+        Menu {
+            title: "Edit";
+            MenuItem {
+                title: "Preferences";
+            }
+        }
+        Menu {
+            title: "Help";
+            MenuItem {
+                title: "About";
+            }
+        }
+    }
+
+    Text {
+        y: parent.height / 2;
+        x: (parent.width - self.width) / 2;
+        text: "Hello World!!";
+    }
+}
